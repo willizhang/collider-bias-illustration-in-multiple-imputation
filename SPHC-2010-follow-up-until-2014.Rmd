@@ -18,7 +18,7 @@ library(mice)
 
 ### 2. SPHC 2010
 ```{r}
-load('/Volumes/LGBT Project data/d_2010.RData')
+load('/Volumes/projects/LGBT Project data/d_2010.RData')
 
 # sexual identity in 2010
 table( d_2010$F10U87G78, useNA = "always" )
@@ -65,7 +65,7 @@ d_2010$income_2010 <- factor( ifelse( d_2010$dispink2010 <= 2500, "<=2,500",
 table( d_2010$income_2010, useNA = "always" )
 
 # use of antidepressants and anxiolytics
-atc_2002_2014 <- read_sas('/Volumes/LGBT Project data/Swedish Registers/atc_pdr_2002_2014.sas7bdat') %>%
+atc_2002_2014 <- read_sas('/Volumes/projects/LGBT Project data/Swedish Registers/atc_pdr_2002_2014.sas7bdat') %>%
   filter( !grepl( "^N05CD", ATC ) ) # include participants who had at least one dispensed prescription of N06A (antidepressants) or N05B (anxiolytics) from 2005-06-30 to 2021-12-31
 
 # check variables
